@@ -52,5 +52,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mirror-Multiplayer-Tutorials.sln"
+    "dotnet.defaultSolution": "Fps-dinh-cao.sln"
 }

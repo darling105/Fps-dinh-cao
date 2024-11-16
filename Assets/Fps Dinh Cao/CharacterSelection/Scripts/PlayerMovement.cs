@@ -17,6 +17,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
 
         public void Update()
         {
+            if(!isOwned){return;}
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
