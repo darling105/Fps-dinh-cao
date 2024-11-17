@@ -56,6 +56,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
         {
             GameObject characterInstance = Instantiate(characters[characterIndex].GameplayCharacterPrefab);
             NetworkServer.Spawn(characterInstance, sender);
+            NetworkServer.ReplacePlayerForConnection(sender,characterInstance);
         }
 
         public void Right()
