@@ -12,7 +12,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
 
         public float moveSpeed = 10f;
         //public float gravityPlayer = -9.81f;
-        [SerializeField] private Transform playerCamera;
+        [SerializeField] private GameObject playerCamera;
         [SerializeField] private float mouseSensitivity = 100f;
         private float xRotation = 0f;
 
@@ -24,9 +24,8 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
                 enabled = false; // Disable this script for non-local players
                 return;
             }
-            playerCamera =Camera.main.transform;
-            playerCamera.SetParent(transform);
-            playerCamera.transform.position = Vector3.zero;
+            playerCamera.SetActive(true);
+            
             // Khóa chuột ban đầu
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -42,7 +41,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -45f, 45f);
 
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up, mouseX);
 
             Vector3 moveDirection = transform.right * x + transform.forward * z;
