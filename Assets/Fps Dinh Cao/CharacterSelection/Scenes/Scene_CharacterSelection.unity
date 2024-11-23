@@ -1510,7 +1510,7 @@ Transform:
   m_GameObject: {fileID: 370173104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.84, y: 0, z: -2.54}
+  m_LocalPosition: {x: 7.84, y: 1.35, z: -2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3111,7 +3111,7 @@ Transform:
   m_GameObject: {fileID: 634257115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.24, y: 0, z: -1.25}
+  m_LocalPosition: {x: -7.24, y: 2.04, z: -1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6554,7 +6554,7 @@ Transform:
   m_GameObject: {fileID: 1314041500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.74, y: 0, z: 5.91}
+  m_LocalPosition: {x: -6.74, y: 1.52, z: 5.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7748,7 +7748,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7875,7 +7875,7 @@ Transform:
   m_GameObject: {fileID: 1708111767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8874,7 +8874,7 @@ Transform:
   m_GameObject: {fileID: 1979303973}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.14, y: 0, z: 4.58}
+  m_LocalPosition: {x: 6.14, y: 1.81, z: 4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9164,6 +9164,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 963907284913333286, guid: 1b594edb066c0864880d5c47e24e1619,
+        type: 3}
+      propertyPath: DualMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963907284913333286, guid: 1b594edb066c0864880d5c47e24e1619,
+        type: 3}
+      propertyPath: statisticsGUI
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4939449619251148293, guid: 1b594edb066c0864880d5c47e24e1619,
         type: 3}
       propertyPath: m_LocalPosition.x

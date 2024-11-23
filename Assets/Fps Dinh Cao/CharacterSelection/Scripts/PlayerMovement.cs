@@ -15,6 +15,8 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private float mouseSensitivity = 100f;
         private float xRotation = 0f;
+        [SyncVar(hook = nameof(TakeDame))]
+        public float Health = 100f;
 
         //Vector3 velocity;
         public override void OnStartLocalPlayer()
@@ -39,7 +41,7 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
             xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -45f, 45f);
+            xRotation = Mathf.Clamp(xRotation, -60f, 60f);
 
             playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             transform.Rotate(Vector3.up, mouseX);
@@ -47,6 +49,43 @@ namespace DapperDino.Mirror.Tutorials.CharacterSelection
             Vector3 moveDirection = transform.right * x + transform.forward * z;
 
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+            if (Input.GetMouseButtonDown(0))
+            {
+                CmdPlayMuzzleFlash();
+                RaycastAttack();
+            }
+        }
+        [ClientCallback]
+        private void RaycastAttack()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 1000f))
+            {
+                PlayerMovement other = hit.transform.GetComponent<PlayerMovement>();
+                if(other != null){
+                    CmdAttack(other.gameObject);
+                }
+            }
+
+        }
+        [Command]
+        private void CmdAttack(GameObject target){
+            target.GetComponent<PlayerMovement>().Health -= 10;
+        }
+        void TakeDame(float _new,float old){
+            Debug.Log("my name is:" + gameObject.name);
+        }
+        [Command]
+        void SetHealth(){
+            Health =100f;
+        }
+        [Command]
+        void CmdPlayMuzzleFlash(){
+            PlayMuzzleFlash();
+        }
+        [ClientRpc]
+        void PlayMuzzleFlash(){
+            //play muzzleflash
         }
     }
 }
